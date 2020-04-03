@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+           Login
+        </title>
+        {% load bootstrap4 %}
+        {% bootstrap_css %}
+        {% load static %}   
+    </head>
+    <form method="POST" action="">
+        {% csrf_token%}
+        <body style="background-size: 1400px; text-align: center" background="{% static 'imagenes/fondo4.gif' %}">
+            
+            <div >
+                <button type="submit" class="btn btn-outline-secondary" style="color:aqua; border-color: transparent; margin-left: 90%;">Cerrar Sesion</button>
+            </div>
+            <div style="background-color: rgba(204, 0, 255, 0.61); width: 300px; margin-left: 10%; margin-top: 10%; border-radius: 10%;">
+                <br>
+                <img class="mb-4 rounded-circle" width="75" height="75" src="{% static 'imagenes/iconoPerfil.gif' %}"><br>
+                <br>
+                <input type="text" style="background-color: aqua; border-color: transparent; width: 200px; margin-left: 50px;" class="form-control" name="first_name" placeholder="nombre" value={{user.first_name}}>
+                <br>
+                <input type="text" style="background-color: aqua; border-color: transparent; width: 200px; margin-left: 50px" class="form-control" name="last_name" placeholder="apellido" value={{user.last_name}}>
+                <br>
+                <input type="text" style="background-color: aqua; border-color: transparent; width: 200px; margin-left: 50px" class="form-control"  name="username" placeholder="usuario" value={{user.username}}>
+                <br>   
+                <input type="text" style="background-color: aqua; border-color: transparent; width: 200px; margin-left: 50px" class="form-control" name="email" placeholder="Correo" value={{user.email}}>
+                <br>
+            </div>
+        </body>
+        {% bootstrap_javascript jquery='full' %}
+    </form>
+    
+</html>

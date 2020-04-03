@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>
+        </title> 
+        {% load bootstrap4 %}
+         {% bootstrap_css %}
+         {% load static %}    
+    </head>
+        <body style="background-size: 1200px; background-repeat: no-repeat; background-position-x: 90px; background-color: black;" background="{% static 'imagenes/marioBros.gif' %}">
+            <form method="POST" action="">
+                {% csrf_token%}
+                {% if form_get.username.value %}
+                {{ form_get.username }}
+                {% else %}
+                {{ form_get.username }}
+                {% endif %}
+                <br>
+                {% if form_get.first_name.value %}
+                {{ form_get.first_name }}
+                {% else %}
+                {{ form_get.first_name }}
+                {% endif %}
+                <br>
+                {% if form_get.last_name.value %}
+                {{ form_get.last_name }}
+                {% else %}
+                {{ form_get.last_name }}
+                {% endif %}
+                <br>
+                {% if form_get.password.value %}
+                {{ form_get.password }}
+                {% else %}
+                {{ form_get.password }}
+                {% endif %}
+                <br>
+                {% if form_get.email.value %}
+                {{ form_get.email }}
+                {% else %}
+                {{ form_get.email }}
+                {% endif %}
+                <div class ="mx-auto" style="background-color: rgba(0, 140, 255, 0.466); width: 300px; border-radius: 10%;margin-left:40%; margin-top: -5%; text-align: center">
+                    <br>
+                    <input  type="text" style="background-color: aqua; border-color: transparent; width: 200px; margin-left: 50px;" class="form-control" name="first_name" placeholder="nombre" required>
+                    <br>
+                    <input type="text" style="background-color: aqua; border-color: transparent; width: 200px ; margin-left: 50px;" class="form-control" name="last_name" placeholder="apellido" required>
+                    <br>
+                    <input type="text" style="background-color: aqua; border-color: transparent; width: 200px; margin-left: 50px;" class="form-control"  name="username" placeholder="usuario" required>
+                    <br>
+                    <input type="text" style="background-color: aqua; border-color: transparent; width: 200px; margin-left: 50px;" class="form-control" name="password" placeholder="password" required>
+                    <br>    
+                    <input type="text" style="background-color: aqua; border-color: transparent; width: 200px; margin-left: 50px;" class="form-control" name="email" placeholder="Correo" required>
+                    <br>
+                    <button type="submit" class="btn btn-outline-secondary" style="color:aqua; border-color: transparent;">Registro</button>
+                </div>
+            </form> 
+        </body>
+    {% bootstrap_javascript jquery='full' %}
+</html>
